@@ -50,13 +50,13 @@
           <div padding-left: 800px class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> 
-              <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
+              <li class="nav-item"><a class="nav-link" ui-sref="about">About</a></li> 
+              <li class="nav-item"><a class="nav-link" ui-sref="packages">Packages</a></li>
               <li class="nav-item"><a class="nav-link" href="package.html">Search</a></li>
-              <li class="nav-item"><a class="nav-link" href="package.html">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-              <li class="nav-item"><a class="nav-link" href="package.html">Login</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Sign Up</a></li>
+              <li class="nav-item"><a class="nav-link" ui-sref="blog">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" ui-sref="contact">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" ui-sref="login">Login</a></li>
+              
             </ul>
 
            
@@ -104,7 +104,7 @@
               <li class="nav-item"><a class="nav-link" href="package.html">Blog</a></li>
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
               <li class="nav-item"><a class="nav-link" href="package.html">Login</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Sign Up</a></li>
+              
             </ul>
 
            
