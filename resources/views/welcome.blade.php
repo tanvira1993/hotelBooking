@@ -49,10 +49,10 @@
 
           <div padding-left: 800px class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+              <li class="nav-item active"><a class="nav-link" ui-sref="dashboard">Home</a></li> 
               <li class="nav-item"><a class="nav-link" ui-sref="about">About</a></li> 
               <li class="nav-item"><a class="nav-link" ui-sref="packages">Packages</a></li>
-              <li class="nav-item"><a class="nav-link" href="package.html">Search</a></li>
+              <li class="nav-item"><a class="nav-link" ui-sref="hotelSearch">Search</a></li>
               <li class="nav-item"><a class="nav-link" ui-sref="blog">Blog</a></li>
               <li class="nav-item"><a class="nav-link" ui-sref="contact">Contact</a></li>
               <li class="nav-item"><a class="nav-link" ui-sref="login">Login</a></li>

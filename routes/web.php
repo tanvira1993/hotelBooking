@@ -38,3 +38,7 @@ Route::get('/contact', function () {
 Route::get('/login', function () {
 	return view('login');
 });
+
+Route::get('/hotelSearch', function () {
+	return view('hotelSearch');
+});

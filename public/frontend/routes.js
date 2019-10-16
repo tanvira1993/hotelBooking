@@ -123,6 +123,25 @@ hotelUserApp.config(['$stateProvider', '$urlRouterProvider', function($stateProv
         }
     })
 
+
+      .state('hotelSearch', {
+        url: "/hotelSearch",
+        templateUrl: "/hotelSearch",
+        data: {pageTitle: 'Hotel Search'},
+        controller: "HotelSearchController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'hotelUserApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/HotelSearchController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
     
 
 
