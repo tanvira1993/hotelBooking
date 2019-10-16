@@ -18,3 +18,27 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
 	return view('dashboard');
 });
+
+Route::get('/about', function () {
+	return view('about');
+});
+
+Route::get('/packages', function () {
+	return view('packages');
+});
+
+Route::get('/blog', function () {
+	return view('blog');
+});
+
+Route::get('/contact', function () {
+	return view('contact');
+});
+
+Route::get('/login', function () {
+	return view('login');
+});
+
+Route::get('/hotelSearch', function () {
+	return view('hotelSearch');
+});
