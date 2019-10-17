@@ -15,7 +15,7 @@
  			</p>
  			<p>
  				Not a member yet ?
- 				<a href="#toregister" class="to_register">Register</a>
+ 				<a ui-sref="register" class="to_register">Register</a>
  			</p>
 
  		</form>
