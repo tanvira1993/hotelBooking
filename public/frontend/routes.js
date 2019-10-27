@@ -162,6 +162,25 @@ hotelUserApp.config(['$stateProvider', '$urlRouterProvider', function($stateProv
         }
     })
 
+
+      .state('blogContent', {
+        url: "/blogContent",
+        templateUrl: "/blogContent",
+        data: {pageTitle: 'Blog Content'},
+        controller: "BlogContentController",
+        resolve: {
+            deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'hotelUserApp',
+                    insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
+                    files: [
+                    'ng-asset/BlogContentController.js'
+                    ]
+                });
+            }]
+        }
+    })
+
     
 
 
