@@ -55,11 +55,11 @@
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a ui-sref="dashboard" class="nav-link">Home</a></li>
 						<li class="nav-item"><a ui-sref="about" class="nav-link">About</a></li>
-						<li class="nav-item"><a ui-sref="packages" class="nav-link">Packages</a></li>
-						<li class="nav-item"><a ui-sref="hotelSearch" class="nav-link">Hotels</a></li>
+					<!--	<li class="nav-item"><a ui-sref="packages" class="nav-link">Packages</a></li>
+						<li class="nav-item"><a ui-sref="hotelSearch" class="nav-link">Hotels</a></li> -->
 						<li class="nav-item"><a ui-sref="blog" class="nav-link">Blog</a></li>
 						<li class="nav-item"><a ui-sref="contact" class="nav-link">Contact</a></li>
-						<li class="nav-item cta"><a ui-sref="login" class="nav-link"><span>Join Us</span></a></li>
+					<!--	<li class="nav-item cta"><a ui-sref="login" class="nav-link"><span>Join Us</span></a></li> -->
 					</ul>
 				</div>
 			</div>
@@ -69,6 +69,7 @@
 
 	</div>
 
+	
 	<div >
 		<div ui-view> </div>
 	</div>
