@@ -44,15 +44,15 @@
       <div class="row d-flex" >
         <div class="col-md-3 d-flex ftco-animate" >
             <div class="blog-entry align-self-stretch" ng-repeat="(key, value) in blogLists">
-                <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+                <a ui-sref="blogContent" class="block-20" style="background-image: url('images/image_1.jpg');">
                 </a>
                 <div class="text p-4 d-block">
                   <span class="tag">@{{value.blog_body}}</span>
                   <h3 class="heading mt-3"><a>@{{value.blog_title}}</a></h3>
                   <div class="meta mb-3">
-                    <div><a href="#">August 12, 2018</a></div>
-                    <div><a href="#">@{{value.author}}</a></div>
-                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                    <div><a ui-sref="blogContent">August 12, 2018</a></div>
+                    <div><a ui-sref="blogContent">@{{value.author}}</a></div>
+                    <div><a ui-sref="blogContent" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
             </div>
         </div>
