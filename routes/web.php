@@ -47,3 +47,7 @@ Route::get('/register', function () {
 Route::get('/hotelSearch', function () {
 	return view('hotelSearch');
 });
+
+Route::get('/blogContent', function () {
+	return view('blogContent');
+});
