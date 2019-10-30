@@ -4,9 +4,9 @@
       <a class="navbar-brand" ui-sref="dashboard">Hotel Search</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
-    </button>
+      </button>
 
-    <div class="collapse navbar-collapse" id="ftco-nav">
+      <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a ui-sref="dashboard" class="nav-link">Home</a></li>
           <li class="nav-item"><a ui-sref="about" class="nav-link">About</a></li>
@@ -15,37 +15,39 @@
                 <li class="nav-item"><a ui-sref="blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a ui-sref="contact" class="nav-link">Contact</a></li>
                 <!--  <li class="nav-item cta"><a ui-sref="login" class="nav-link"><span>Join Us</span></a></li> -->
-            </ul>
-        </div>
-    </div>
-</nav>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
 
 
-</div>
-<!-- END nav -->
-
-
-<div class="hero-wrap js-fullheight" style="background-image: url('images/bg_4.jpg');">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-        <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-          <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a ui-sref="dashboard">Home</a></span> <span>Blog</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Tips &amp; Articles</h1>
       </div>
-  </div>
-</div>
-</div>
+      <!-- END nav -->
 
 
-<section class="ftco-section bg-light">
-    <div class="container" >
-      <div class="row d-flex" >
-        <div class="col-md-3 d-flex ftco-animate" >
-            <div class="col-md-10 blog-entry align-self-stretch" ng-repeat="(key, value) in blogLists">
-              <span class="ion-ios-arrow-down"></span>
-                <a ui-sref="blogContent" class="block-20" style="background-image: url('images/image_3.jpg');">
+      <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_4.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+            <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+              <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a ui-sref="dashboard">Home</a></span> <span>Blog</span></p>
+              <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Tips &amp; Articles</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <section class="ftco-section bg-light">
+        <div class="container" >
+          <div class="row d-flex" >
+            <div class="col-md-3 d-flex ftco-animate" >
+              <div class="col-md-10 blog-entry align-self-stretch" ng-repeat="(key, value) in blogLists">
+                <span class="ion-ios-arrow-down"></span>
+                <a ng-href="#!/blogContent/@{{value.blog_id}}" class="block-20" style="background-image: url('images/image_3.jpg');">
+
                 </a>
                 <div class="text p-4 d-block">
                   <span class="tag">@{{value.blog_body}}</span>
@@ -54,31 +56,31 @@
                     <div><a ui-sref="blogContent">August 12, 2018</a></div>
                     <div><a ui-sref="blogContent">@{{value.author}}</a></div>
                     <div><a ui-sref="blogContent" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  </div>
                 </div>
+              </div>
             </div>
+
+          </div>
+          <div class="row mt-5">
+            <div class="col text-center">
+              <div class="block-27">
+                <ul>
+                  <li><a href="#">&lt;</a></li>
+                  <li class="active"><span>1</span></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">&gt;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-</div>
-<div class="row mt-5">
-    <div class="col text-center">
-      <div class="block-27">
-        <ul>
-          <li><a href="#">&lt;</a></li>
-          <li class="active"><span>1</span></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">&gt;</a></li>
-      </ul>
-  </div>
-</div>
-</div>
-</div>
-</section>
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-<!-- loader -->
-<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-<script src="frontend/js/mainTheme.js"></script>
+      <script src="frontend/js/mainTheme.js"></script>

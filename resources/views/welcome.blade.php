@@ -60,7 +60,7 @@
 						<li class="nav-item"><a ui-sref="hotelSearch" class="nav-link">Hotels</a></li> -->
 						<li class="nav-item"><a ui-sref="blog" class="nav-link">Blog</a></li>
 						<li class="nav-item"><a ui-sref="contact" class="nav-link">Contact</a></li>
-					<!--	<li class="nav-item cta"><a ui-sref="login" class="nav-link"><span>Join Us</span></a></li> -->
+						<!--	<li class="nav-item cta"><a ui-sref="login" class="nav-link"><span>Join Us</span></a></li> -->
 					</ul>
 				</div>
 			</div>
@@ -81,14 +81,18 @@
 					<div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
 						<h2>Subcribe to our Newsletter</h2>
 						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+						<pre>
+							@{{subInfo|json}}
+						</pre>
 						<div class="row d-flex justify-content-center mt-5">
 							<div class="col-md-8">
-								<form action="#" class="subscribe-form">
+								<form id="Sub-form" name="SubForm" novalidate class="subscribe-form">
 									<div class="form-group d-flex">
-										<input type="text" class="form-control" placeholder="Enter email address">
-										<input type="submit" value="Subscribe" class="submit px-3">
+										<input type="email" name="sub" ng-model="subInfo.sub" class="form-control" placeholder="Enter email address">
+										<input type="submit" ng-click="saveSub()"  class="submit px-3">
 									</div>
 								</form>
+								
 							</div>
 						</div>
 					</div>

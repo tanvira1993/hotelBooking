@@ -86,7 +86,7 @@ hotelUserApp.config(['$stateProvider', '$urlRouterProvider', function($stateProv
     })
 
 
-      .state('contact', {
+    .state('contact', {
         url: "/contact",
         templateUrl: "/contact",
         data: {pageTitle: 'Contact'},
@@ -105,7 +105,7 @@ hotelUserApp.config(['$stateProvider', '$urlRouterProvider', function($stateProv
     })
 
 
-      .state('login', {
+    .state('login', {
         url: "/login",
         templateUrl: "/login",
         data: {pageTitle: 'Login'},
@@ -125,7 +125,7 @@ hotelUserApp.config(['$stateProvider', '$urlRouterProvider', function($stateProv
 
 
 
-      .state('register', {
+    .state('register', {
         url: "/register",
         templateUrl: "/register",
         data: {pageTitle: 'Register'},
@@ -144,7 +144,7 @@ hotelUserApp.config(['$stateProvider', '$urlRouterProvider', function($stateProv
     })
 
 
-      .state('hotelSearch', {
+    .state('hotelSearch', {
         url: "/hotelSearch",
         templateUrl: "/hotelSearch",
         data: {pageTitle: 'Hotel Search'},
@@ -163,8 +163,8 @@ hotelUserApp.config(['$stateProvider', '$urlRouterProvider', function($stateProv
     })
 
 
-      .state('blogContent', {
-        url: "/blogContent",
+    .state('blogContent', {
+        url: "/blogContent/{id}",
         templateUrl: "/blogContent",
         data: {pageTitle: 'Blog Content'},
         controller: "BlogContentController",

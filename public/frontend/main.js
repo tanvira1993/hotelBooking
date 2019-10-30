@@ -47,263 +47,49 @@ var hotelUserApp = angular.module("hotelUserApp", [
  }]);
 
  /* Setup App run functions*/
- /*hotelUserApp.run(['$rootScope', '$http','$state','$window', '$filter', '$location',
+ hotelUserApp.run(['$rootScope', '$http','$state','$window', '$filter', '$location',
  	function($rootScope, $http, $state,$window, $filter,$location) {
 
- 		$rootScope.token = localStorage.getItem('token');
- 		$rootScope.idUser = localStorage.getItem('idUser');
- 		$rootScope.idUserRole= localStorage.getItem('idUserRole');
-
- 		$rootScope.loginInfo = {
- 			email: null,
- 			password: null
+ 		$rootScope.counter = {
+ 			hit: 1,
  		};
-
- 		$rootScope.validateSignin = function (){
- 			var formStatus = true;
- 			return formStatus;
- 		}
-
- 		$rootScope.loginError = null;
-
- 		$rootScope.login = function(){
- 			if($rootScope.validateSignin()){
- 				$http({
- 					method: 'post',
- 					url: 'api/login',
- 					data: $rootScope.loginInfo
- 				}).then(function(response) {
- 					$rootScope.loginInfo= null;
-
- 					localStorage.setItem('token', response.data.token);
- 					localStorage.setItem('idUser', response.data.userInfo.user_id);
- 					localStorage.setItem('idUserRole', response.data.userInfo.id_user_roles);               
-
- 					$rootScope.token = localStorage.getItem('token');
- 					$rootScope.idUser = localStorage.getItem('idUser');
- 					$rootScope.idUserRole= localStorage.getItem('idUserRole');
- 					toastr.success("Login Success..!!")
- 					
- 					$window.location.reload();
- 					$location.path('/dashboard');
- 				}, function(response) {
- 					$rootScope.loginError = response.data.error;
- 					toastr.error("Login Failed..!!")
- 				});
- 			}
- 			else{
- 				toastr.error("Login Failed..!!")
- 			}
-
- 		}
-
- 		$rootScope.getAllProjectList = function(){
-
+ 		$rootScope.updateCounter = function(){
  			$http({
- 				method: 'get',
- 				url: 'api/projectList',
+ 				method: 'post',
+ 				url: 'api/saveVisitor',
+ 				data: $rootScope.counter
  			}).then(function (response) {
- 				$rootScope.projectList = response.data.data;
-
+ 				
  			}, function (response) {
-
-
- 			});
-
- 		}
-
- 		$rootScope.getAllMaterialList = function(){
-
- 			$http({
- 				method: 'get',
- 				url: 'api/materialList',
- 			}).then(function (response) {
- 				$rootScope.materialList = response.data.data;
-
- 			}, function (response) {
-
-
- 			});
-
- 		}
-
- 		$rootScope.getAllVendorList = function(){
-
- 			$http({
- 				method: 'get',
- 				url: 'api/vendorList',
- 			}).then(function (response) {
- 				$rootScope.vendorList = response.data.data;
-
- 			}, function (response) {
-
-
- 			});
-
- 		}
-
- 		$rootScope.getApproverList1 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getApproverList1',
- 			}).then(function (response) {
- 				$rootScope.approverList1 = response.data.data;
- 			}, function (response) {
-
+ 				
 
  			});
  		}
+ 		$rootScope.updateCounter();
+ 		$rootScope.saveSub = function(){
+ 			$rootScope.subInfo
+ 			toastr.info("'info', 'Loading!', 'Please wait.'")
+ 			$http({
+ 				method: 'post',
+ 				url: 'api/saveSubscriber',
+ 				data: $rootScope.subInfo
+ 			}).then(function (response) {
+ 				$rootScope.subInfo=null
+ 				toastr.success("Congrat..!!")
+ 			}, function (response) {
+ 				swal({
+ 					title: response.data.heading,
+ 					text: response.data.message,
+ 					html:true,
+ 					type: 'error'
+ 				}); 
+ 				toastr.error("Sorry")
+
+ 			});
+ 		}
+
+
  		
- 		$rootScope.getApproverList2 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getApproverList2',
- 			}).then(function (response) {
- 				$rootScope.approverList2 = response.data.data;
- 			}, function (response) {
-
-
- 			});
- 		}
-
- 		$rootScope.getApproverList3 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getApproverList3',
- 			}).then(function (response) {
- 				$rootScope.approverList3 = response.data.data;
- 			}, function (response) {
-
-
- 			});
- 		}
-
- 		$rootScope.getApproverList4 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getApproverList4',
- 			}).then(function (response) {
- 				$rootScope.approverList4 = response.data.data;
- 			}, function (response) {
-
-
- 			});
- 		}
-
- 		$rootScope.getAllCustomerList = function(){
-
- 			$http({
- 				method: 'get',
- 				url: 'api/customerList',
- 			}).then(function (response) {
- 				$rootScope.customerList = response.data.data;
-
- 			}, function (response) {
-
-
- 			});
-
- 		}
-
- 		$rootScope.getUserIdById = function(){
-
- 			$http({
- 				method: 'get',
- 				url: 'api/userIdById',
- 			}).then(function (response) {
- 				$rootScope.usersInfo= response.data.data;
-
- 			}, function (response) {
-
-
- 			});
-
- 		}
  		
- 		$rootScope.getPRApprovedList = function(){
-
- 			$http({
- 				method: 'get',
- 				url: 'api/getPRApprovedList',
- 			}).then(function (response) {
- 				$rootScope.prApprovedList= response.data.data;
-
- 			}, function (response) {
-
-
- 			});
-
- 		}
-
- 		$rootScope.getPOApproverList1 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getPOApproverList1',
- 			}).then(function (response) {
- 				$rootScope.poApproverList1 = response.data.data;
- 			}, function (response) {
-
-
- 			});
- 		}
-
- 		$rootScope.getPOApproverList2 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getPOApproverList2',
- 			}).then(function (response) {
- 				$rootScope.poApproverList2 = response.data.data;
- 			}, function (response) {
-
-
- 			});
- 		}
-
- 		$rootScope.getPOApproverList3 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getPOApproverList3',
- 			}).then(function (response) {
- 				$rootScope.poApproverList3 = response.data.data;
- 			}, function (response) {
-
-
- 			});
- 		}
-
- 		$rootScope.getPOApproverList4 = function(){
- 			$http({
- 				method: 'get',
- 				url: 'api/getPOApproverList4',
- 			}).then(function (response) {
- 				$rootScope.poApproverList4 = response.data.data;
- 			}, function (response) {
-
-
- 			});
- 		}
-
- 		$rootScope.logOut= function(){
- 			window.location.href = 'login/logout/';
- 		}
-
- 		if($rootScope.token!=null && $rootScope.idUser!=null&& $rootScope.idUserRole!=null)
- 		{
- 			$rootScope.getAllVendorList();
- 			$rootScope.getAllCustomerList();
- 			$rootScope.getAllProjectList();
- 			$rootScope.getAllMaterialList();
- 			$rootScope.getUserIdById();
- 			$rootScope.getApproverList1();
- 			$rootScope.getApproverList2();
- 			$rootScope.getApproverList3();
- 			$rootScope.getApproverList4();
- 			$rootScope.getPRApprovedList();
-
- 			$rootScope.getPOApproverList1();
- 			$rootScope.getPOApproverList2();
- 			$rootScope.getPOApproverList3();
- 			$rootScope.getPOApproverList4();
- 		}
  		
- 	}]);*/
+ 	}]);
