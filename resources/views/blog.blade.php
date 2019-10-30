@@ -39,12 +39,15 @@
       </div>
 
 
+
       <section class="ftco-section bg-light">
         <div class="container" >
           <div class="row d-flex" >
             <div class="col-md-3 d-flex ftco-animate" >
-              <div class="blog-entry align-self-stretch" ng-repeat="(key, value) in blogLists">
-                <a ng-href="#!/blogContent/@{{value.blog_id}}" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <div class="col-md-10 blog-entry align-self-stretch" ng-repeat="(key, value) in blogLists">
+                <span class="ion-ios-arrow-down"></span>
+                <a ng-href="#!/blogContent/@{{value.blog_id}}" class="block-20" style="background-image: url('images/image_3.jpg');">
+
                 </a>
                 <div class="text p-4 d-block">
                   <span class="tag">@{{value.blog_body}}</span>
