@@ -70,9 +70,15 @@ class VisitorsController extends Controller
 
 	public function saveVisitor(Request $request){
 		$bandiHit= Visitors::select('visitors.visit_count_day')->first();
-		$hit = Visitors::find(1);
+		if(isset($bandiHit)){
+			$hit = Visitors::find(1);
 		$hit->visit_count_day = $request->hit +$bandiHit->visit_count_day;
-
+			;
+		}
+		else{
+		$hit = new Visitors;
+			$hit->visit_count_day=1;
+		}
 
 
 		if($hit->save()){
