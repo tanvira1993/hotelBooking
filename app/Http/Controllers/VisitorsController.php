@@ -70,28 +70,45 @@ class VisitorsController extends Controller
 
 	public function saveVisitor(Request $request){
 		$bandiHit= Visitors::select('visitors.visit_count_day')->first();
-		if(isset($bandiHit)){
-			$hit = Visitors::find(1);
-		$hit->visit_count_day = $request->hit +$bandiHit->visit_count_day;
-			;
-		}
-		else{
-		$hit = new Visitors;
+		if(!isset($bandiHit->visit_count_day)){
+			$hit = new Visitors;
 			$hit->visit_count_day=1;
+			$hit->visit_count_week =0;
+			$hit->visit_count_month =0;
+			$hit->visit_count_year =0;
+
+			if($hit->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $hit), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Sorry, You are not a Subscriber yet'), 400);
+
+			}
+		}
+		else {
+			$hit = Visitors::find(1);
+			$hit->visit_count_day = $request->hit +$bandiHit->visit_count_day;
+
+			if($hit->save()){
+				DB::commit();
+				return Response::json(array('success' => TRUE, 'data' => $hit), 200);
+			}
+
+			else{
+
+				DB::rollback();
+				return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Sorry, You are not a Subscriber yet'), 400);
+
+			}
+
 		}
 
 
-		if($hit->save()){
-			DB::commit();
-			return Response::json(array('success' => TRUE, 'data' => $hit), 200);
-		}
 
-		else{
-
-			DB::rollback();
-			return Response::json(array('success' => FALSE, 'heading' => 'Insertion Failed', 'message' => 'Sorry, You are not a Subscriber yet'), 400);
-
-		}
 	}
 
 	public function seeVisitor(){
