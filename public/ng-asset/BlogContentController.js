@@ -7,7 +7,7 @@ angular.module('hotelUserApp').controller('BlogContentController', ['$scope', '$
         {
         	$http({
         		method: 'get',
-        		url: 'http://127.0.0.1:8080/api/getBlogById/' +$scope.id,
+        		url: $rootScope.Base_url+'api/getBlogById/' +$scope.id,
         		
         	}).then(function (response) {
         		$rootScope.blogLists= response.data.data;

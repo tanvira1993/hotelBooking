@@ -49,7 +49,7 @@ var hotelUserApp = angular.module("hotelUserApp", [
  /* Setup App run functions*/
  hotelUserApp.run(['$rootScope', '$http','$state','$window', '$filter', '$location',
  	function($rootScope, $http, $state,$window, $filter,$location) {
-
+ 		$rootScope.Base_url='http://127.0.0.1:8080/'
  		$rootScope.counter = {
  			hit: 1,
  		};
